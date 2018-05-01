@@ -1,0 +1,33 @@
+Removed Pin From Net: NetName=LED9 Pin=D2-3
+Removed Pin From Net: NetName=LED2 Pin=D3-3
+Removed Pin From Net: NetName=LED10 Pin=D4-3
+Removed Pin From Net: NetName=LED3 Pin=D5-3
+Removed Pin From Net: NetName=LED11 Pin=D6-3
+Removed Pin From Net: NetName=LED4 Pin=D7-3
+Removed Pin From Net: NetName=LED12 Pin=D8-3
+Removed Pin From Net: NetName=LED5 Pin=D9-3
+Removed Pin From Net: NetName=LED13 Pin=D10-3
+Removed Pin From Net: NetName=LED6 Pin=D11-3
+Removed Pin From Net: NetName=LED14 Pin=D12-3
+Removed Pin From Net: NetName=LED7 Pin=D13-3
+Removed Pin From Net: NetName=LED15 Pin=D14-3
+Removed Pin From Net: NetName=LED8 Pin=D15-3
+Added Pin To Net: NetName=LED2 Pin=D2-3
+Added Pin To Net: NetName=LED3 Pin=D3-3
+Added Pin To Net: NetName=LED4 Pin=D4-3
+Added Pin To Net: NetName=LED5 Pin=D5-3
+Added Pin To Net: NetName=LED6 Pin=D6-3
+Added Pin To Net: NetName=LED7 Pin=D7-3
+Added Pin To Net: NetName=LED8 Pin=D8-3
+Added Pin To Net: NetName=LED9 Pin=D9-3
+Added Pin To Net: NetName=LED10 Pin=D10-3
+Added Pin To Net: NetName=LED11 Pin=D11-3
+Added Pin To Net: NetName=LED12 Pin=D12-3
+Added Pin To Net: NetName=LED13 Pin=D13-3
+Added Pin To Net: NetName=LED14 Pin=D14-3
+Added Pin To Net: NetName=LED15 Pin=D15-3
+Added Member To Class: ClassName=Sheet1 Member=Component R17 150R
+Added Member To Class: ClassName=Sheet1 Member=Component R18 150R
+Added Member To Class: ClassName=Sheet1 Member=Component R19 150R
+Added Member To Class: ClassName=Sheet1 Member=Component R20 150R
+Added Room: Name=Sheet1
