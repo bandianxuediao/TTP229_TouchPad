@@ -47,10 +47,75 @@ void HC595SendData(unsigned int SendVal)
 	R_CLK_Pin12_STCP_OUT = 1;
 }
 
+void write_smg(u8 temp)
+{
+	u8 i;
+	 for(i=0;i<8;i++)
+	 {
+		  S_CLK_Pin11_SHCP_OUT=0;
+		  if((temp&0x80) == 0x80)						
+		  {
+			  MOSIO_Pin14_DS_OUT = 1; //串行数据输出
+		  }
+		  else
+		  {
+			  MOSIO_Pin14_DS_OUT = 0;
+		  } 
+		 S_CLK_Pin11_SHCP_OUT=1; //移位输入时钟，上升沿输入
+		 temp<<=1;
+	     delay_us(3);
+		 S_CLK_Pin11_SHCP_OUT=0;
+	 }
+	 
+	 R_CLK_Pin12_STCP_OUT=0; //并行输出时钟
+	 delay_us(3);	
+	 R_CLK_Pin12_STCP_OUT=1;
+	 delay_us(3);	
+	 R_CLK_Pin12_STCP_OUT=0;	
+}
+
+// 扫描键值
+uint16_t KeyScanValueEx(void)
+{
+	uint8_t i, j;
+	uint16_t keyData = 0x00; // = PIND; 
+	//
+	SDA_H;
+	// 扫描三毫秒
+//	for ( i = 0; i < 250; i++ )
+//	{
+//		delay_us(10);
+//		if ( !SDA_read ) break;
+//	}
+//	if ( i > 220 ) return 0xFF;
+//	j = 0;
+	// 有键按下，取键值
+	for ( i = 0; i < 16; i++ )
+	{
+		SCL_L;
+		delay_us(10);  // 10us
+		// 取数据
+		if ( SDA_read )
+		{
+			keyData += 0<<i;
+			// break;
+		} 
+		else
+		{
+			keyData += 1<<i;
+		}
+		SCL_H;
+		delay_us(10);  // 10us
+	}
+	SCL_H;
+
+	return keyData;
+}
 int main(void)
 {
 	u8 key;
 	u16 i = 0;
+		uint16_t key_value;
 	/////main函数
 
 	u16 Valll = 0XFFFF;
@@ -67,5 +132,13 @@ int main(void)
 		HC595SendData(0xff0f);
 		delay_ms(500);
 		delay_ms(500);
+		
+	
+		key_value = KeyScanValueEx();
+		if ((key_value != 0xffff) && (key_value != 0x0000))
+			printf ("Key has been pressed down! Value: 0x%04x \r\n", key_value);
+		
+		
+		
 	}
 }
