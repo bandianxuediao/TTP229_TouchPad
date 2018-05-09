@@ -3,7 +3,7 @@
 
 #define HC595_PORT GPIOB
 #define MOSIO_Pin14_DS_OUT PBout(14)
-#define S_CLK_Pin11_SHCP_OUT PBout(11)
+#define S_CLK_Pin13_SHCP_OUT PBout(13)
 #define R_CLK_Pin12_STCP_OUT PBout(12)
 /*--ZQP的74HC595的初始化*/
 void HC595_Init()
@@ -20,9 +20,11 @@ void HC595_Init()
 }
 
 
-void HC595SendData(unsigned int SendVal)
+void HC595SendData(u16 SendVal)
 {
 	uint8_t i;
+	S_CLK_Pin13_SHCP_OUT = 0;
+	S_CLK_Pin13_SHCP_OUT = 0;
 
 	for (i = 0; i < 16; i++)
 	{
@@ -33,15 +35,20 @@ void HC595SendData(unsigned int SendVal)
 			MOSIO_Pin14_DS_OUT = 0;
 
 		/*--step2、SHCP发生一次上升沿的时候，74HC595才会从DS引脚上取得当前的数据*/
-		S_CLK_Pin11_SHCP_OUT = 0;
-		delay_us(100);
-		S_CLK_Pin11_SHCP_OUT = 1;
+		S_CLK_Pin13_SHCP_OUT = 0;
+		delay_us(10);
+		S_CLK_Pin13_SHCP_OUT = 1;
 	}
 
 	/*--step3、当移位寄存器的8位数据全部传输完毕后，制造一次锁存器时钟引脚的上升沿（先拉低电平再拉高电平）*/
 	R_CLK_Pin12_STCP_OUT = 0;
-	delay_us(100);
+	delay_us(10);
 	R_CLK_Pin12_STCP_OUT = 1;
+	delay_us(10);
+	S_CLK_Pin13_SHCP_OUT = 0;
+
+	R_CLK_Pin12_STCP_OUT = 0;
+	MOSIO_Pin14_DS_OUT = 0;
 }
 
 void write_smg(u8 temp)
@@ -50,7 +57,7 @@ void write_smg(u8 temp)
 
 	for(i = 0; i < 8; i++)
 	{
-		S_CLK_Pin11_SHCP_OUT = 0;
+		S_CLK_Pin13_SHCP_OUT = 0;
 
 		if((temp & 0x80) == 0x80)
 		{
@@ -61,10 +68,10 @@ void write_smg(u8 temp)
 			MOSIO_Pin14_DS_OUT = 0;
 		}
 
-		S_CLK_Pin11_SHCP_OUT = 1; //移位输入时钟，上升沿输入
+		S_CLK_Pin13_SHCP_OUT = 1; //移位输入时钟，上升沿输入
 		temp <<= 1;
 		delay_us(3);
-		S_CLK_Pin11_SHCP_OUT = 0;
+		S_CLK_Pin13_SHCP_OUT = 0;
 	}
 
 	R_CLK_Pin12_STCP_OUT = 0; //并行输出时钟
@@ -79,29 +86,36 @@ int main(void)
 {
 	u8 key;
 	u16 i = 0;
-	uint8_t key_value;
+	u8 key_value = 0;
 	/////main函数
 
-	u16 Valll = 0XFFFF;
+	u16 Valll = 1;
 	delay_init();            //延时函数初始化
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
 	uart_init(115200);      //串口初始化为115200
 	HC595_Init();
-
+	PAD_IIC_Init();
+	delay_ms(500);
+	delay_ms(500);
 	/*--Z QP的74HC595*/
 
 
-	while(Valll)
+	while(1)
 	{
-		HC595SendData(0xff0f);
-		delay_ms(500);
-		delay_ms(500);
-
-
+		//HC595SendData(Valll);
+		//      delay_ms(500);
+		//      delay_ms(500);
+		//Valll<<=1;
+		//      if(Valll==0)
+		//      {
+		//      Valll=1;
+		//      }
 		key_value = scan_key();
 
-		if ((key_value != 0xffff) && (key_value != 0x0000))
-			printf ("Value: 0x%04x \r\n", key_value);
-
+		if (key_value != 0)
+		{
+			HC595SendData(1 << (key_value - 1));
+			printf ("按键%02d按下 \r\n", key_value);
+		}
 	}
 }

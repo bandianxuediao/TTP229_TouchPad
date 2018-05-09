@@ -23,39 +23,101 @@ const u8 PAD_BACK[2] = {0xff, 0xbf};
 u16 scan_key(void)
 {
 	//  u8 aa;
-	u16 temp1;
+	u16 receive;
 	PAD_IIC_Start();
 	PAD_IIC_Key_Send_Byte(0xAF);
 	PAD_IIC_Ack();//发送nACK
-	temp1 = PAD_IIC_Read_Byte(0);
-	temp1 = (temp1 << 8) + PAD_IIC_Read_Byte(0);
+	receive = PAD_IIC_Read_Byte(0);
+	PAD_IIC_Ack();//发送nACK
+
+	receive = (receive << 8) + PAD_IIC_Read_Byte(0);
 	PAD_IIC_NAck();//发送nACK
 	PAD_IIC_Stop();//产生一个停止条件
-	//  if(num == KEY_AREA1)
-	//  {
-	//      if((PAD_1[0] == temp1[0])&&(PAD_1[1] == temp1[1])){return KEY_1;}
-	//      if((PAD_2[0] == temp1[0])&&(PAD_2[1] == temp1[1])){return KEY_2;}
-	//      if((PAD_3[0] == temp1[0])&&(PAD_3[1] == temp1[1])){return KEY_3;}
-	//      if((PAD_4[0] == temp1[0])&&(PAD_4[1] == temp1[1])){return KEY_4;}
-	//      if((PAD_5[0] == temp1[0])&&(PAD_5[1] == temp1[1])){return KEY_5;}
-	//      if((PAD_6[0] == temp1[0])&&(PAD_6[1] == temp1[1])){return KEY_6;}
-	//      if((PAD_7[0] == temp1[0])&&(PAD_7[1] == temp1[1])){return KEY_7;}
-	//      if((PAD_IN[0] == temp1[0])&&(PAD_IN[1] == temp1[1])){return KEY_IN;}
-	//      if((PAD_OUT[0] == temp1[0])&&(PAD_OUT[1] == temp1[1])){return KEY_OUT;}
-	//  }
-	//  if(num == KEY_AREA2)
-	//  {
-	//      if((PAD_8[0] ==temp1[0])&&(PAD_8[1] == temp1[1])){return KEY_8;}
-	//      if((PAD_9[0] ==temp1[0])&&(PAD_9[1] == temp1[1])){return KEY_9;}
-	//      if((PAD_0[0] ==temp1[0])&&(PAD_0[1] == temp1[1])){return 0x10;}
-	//      if((PAD_SYS[0] ==temp1[0])&&(PAD_SYS[1] == temp1[1])){return KEY_SYS;}
-	//      if((PAD_KEY[0] ==temp1[0])&&(PAD_KEY[1] == temp1[1])){return KEY_KEY;}
-	//      if((PAD_SURE[0] ==temp1[0])&&(PAD_SURE[1] == temp1[1])){return KEY_SURE;}
-	//      if((PAD_BACK[0] ==temp1[0])&&(PAD_BACK[1] == temp1[1])){return KEY_BACK;}
-	//  }
+
+	if(receive == 0x8000)
+	{
+		return 1;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0080)
+	{
+		return 2;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x4000)
+	{
+		return 3;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0040)
+	{
+		return 4;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x2000)
+	{
+		return 5;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0020)
+	{
+		return 6;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x1000)
+	{
+		return 7;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0010)
+	{
+		return 8;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0800)
+	{
+		return 9;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0008)
+	{
+		return 10;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0400)
+	{
+		return 11;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0004)
+	{
+		return 12;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0200)
+	{
+		return 13;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0002)
+	{
+		return 14;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0100)
+	{
+		return 15;   //TP0按下，代表按键1
+	}
+
+	if(receive == 0x0001)
+	{
+		return 16;   //TP0按下，代表按键1
+	}
+
+
 	//if((temp1=!0)&&(temp1!=0xffff))
 	//{
-	return temp1;
+	return 0;
 	//}
 	//  printf("%x %x\r\n",temp1[0],temp1[1]);
 }
