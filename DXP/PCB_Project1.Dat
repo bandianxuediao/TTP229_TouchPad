@@ -1,0 +1,18 @@
+Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~PCB_Project1.PrjPCB|ReportField=ProjectFullPath~D:\GitRepositories\TTP229_TouchPad\DXP\PCB_Project1.PrjPCB|ReportField=Title~Bill of Materials For Project [PCB_Project1.PrjPCB] (No PCB Document Selected)|ReportField=TotalQuantity~87|ReportField=ReportTime~16:43:26|ReportField=ReportDate~2018/5/12|ReportField=ReportDateTime~2018/5/12 16:43:26|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~2018/5/12|ReportField=CurrentTime~16:43:17|ReportField=Date~|ReportField=DocumentFullPathAndName~D:\GitRepositories\TTP229_TouchPad\DXP\Sheet1.SchDoc|ReportField=DocumentName~Sheet1.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~2018/5/12|ReportField=Organization~|ReportField=ProjectName~PCB_Project1.PrjPCB|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~PCB_Project1.PrjPCB|ReportField=DataSourceFullPath~D:\GitRepositories\TTP229_TouchPad\DXP\PCB_Project1.PrjPCB
+102|0603/NPO|C1|0603p|电容-NPO-0603|1
+104|0603/NPO|C2, C10, C11|0603p|电容-NPO-0603|3
+15pF|Capacitor|C3, C4, C9|0603p|Cap|3
+22pF|Capacitor|C5, C7, C8|0603p|Cap|3
+1u|0603/NPO|C6|0603p|电容-NPO-0603|1
+2xLED||D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12, D13, D14, D15, D16|LED|2xLED|16
+Header 4X2|Header, 4-Pin, Dual row|P1|HDR2X4|Header 4X2|1
+10k|0603/0.1000w/75v, Resistor|R1, R5, R6|0603p|Res2, 电阻-0603|3
+470R|0603/0.1000w/75v|R2, R4|0603p|电阻-0603|2
+1M|0603/0.1000w/75v|R3|0603p|电阻-0603|1
+150R|0603/0.1000w/75v|R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38|0603p|电阻-0603|32
+TouchPad||TouchPad1, TouchPad2, TouchPad3, TouchPad5, TouchPad6, TouchPad7, TouchPad9, TouchPad10, TouchPad11, TouchPad13, TouchPad14, TouchPad15|TOUCHKEY|TouchPad|12
+TouchPad||TouchPad4, TouchPad8, TouchPad12, TouchPad16|TOUCHKEYbig|TouchPad|4
+TTP229-L||U1|LC-SSOP-28_150mil|TTP229-L|1
+74HC595||U2, U3|LC-SOP-16_150mil|74HCT595|2
+8550(SOT23)||V1|SOT-23R|8550(SOT23)|1
+8050(SOT23)||V2|SOT-23R|8050(SOT23)|1
