@@ -13,7 +13,7 @@
 #include "usart.h"
 #include "PAD_IIC.h"
 #include "pad.h"
-
+#include "HC595.h"
 //#include "stm32f4xx_conf.h"
 //#include "irmpsystem.h"
 //#include "core_cm3.h"

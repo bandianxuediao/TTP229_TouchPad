@@ -41,77 +41,77 @@ u16 scan_key(void)
 
 	if(receive == 0x0080)
 	{
-		return 2;   //TP0按下，代表按键1
+		return 2;   //TP8按下，代表按键2
 	}
 
 	if(receive == 0x4000)
 	{
-		return 3;   //TP0按下，代表按键1
+		return 3;   //TP1按下，代表按键3
 	}
 
 	if(receive == 0x0040)
 	{
-		return 4;   //TP0按下，代表按键1
+		return 4;   //TP9按下，代表按键4
 	}
 
 	if(receive == 0x2000)
 	{
-		return 5;   //TP0按下，代表按键1
+		return 5;   //TP2按下，代表按键5
 	}
 
 	if(receive == 0x0020)
 	{
-		return 6;   //TP0按下，代表按键1
+		return 6;   //TP10按下，代表按键6
 	}
 
 	if(receive == 0x1000)
 	{
-		return 7;   //TP0按下，代表按键1
+		return 7;   //TP3按下，代表按键7
 	}
 
 	if(receive == 0x0010)
 	{
-		return 8;   //TP0按下，代表按键1
+		return 8;   //TP11按下，代表按键8
 	}
 
 	if(receive == 0x0800)
 	{
-		return 9;   //TP0按下，代表按键1
+		return 9;   //TP4按下，代表按键9
 	}
 
 	if(receive == 0x0008)
 	{
-		return 10;   //TP0按下，代表按键1
+		return 10;   //TP12按下，代表按键10
 	}
 
 	if(receive == 0x0400)
 	{
-		return 11;   //TP0按下，代表按键1
+		return 11;   //TP5按下，代表按键11
 	}
 
 	if(receive == 0x0004)
 	{
-		return 12;   //TP0按下，代表按键1
+		return 12;   //TP13按下，代表按键12
 	}
 
 	if(receive == 0x0200)
 	{
-		return 13;   //TP0按下，代表按键1
+		return 13;   //TP6按下，代表按键13
 	}
 
 	if(receive == 0x0002)
 	{
-		return 14;   //TP0按下，代表按键1
+		return 14;   //TP14按下，代表按键14
 	}
 
 	if(receive == 0x0100)
 	{
-		return 15;   //TP0按下，代表按键1
+		return 15;   //TP7按下，代表按键15
 	}
 
 	if(receive == 0x0001)
 	{
-		return 16;   //TP0按下，代表按键1
+		return 16;   //TP15按下，代表按键16
 	}
 
 
