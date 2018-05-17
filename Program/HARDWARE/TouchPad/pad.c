@@ -22,7 +22,6 @@ const u8 PAD_BACK[2] = {0xff, 0xbf};
 
 u16 scan_key(void)
 {
-	//  u8 aa;
 	u16 receive;
 	PAD_IIC_Start();
 	PAD_IIC_Key_Send_Byte(0xAF);

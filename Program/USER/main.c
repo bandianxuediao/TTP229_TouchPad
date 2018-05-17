@@ -1,8 +1,4 @@
 #include "includes.h"
-
-
-
-
 int main(void)
 {
 	//  u8 key;
@@ -19,7 +15,6 @@ int main(void)
 	delay_ms(500);
 	/*--Z QP的74HC595*/
 
-
 	while(1)
 	{
 		key_value = scan_key();
@@ -28,6 +23,8 @@ int main(void)
 		{
 			HC595SendData(1 << (key_value - 1));
 			printf ("按键%02d按下 \r\n", key_value);
+			delay_ms(800);
+			HC595SendData(0 << (key_value - 1));
 		}
 	}
 }
