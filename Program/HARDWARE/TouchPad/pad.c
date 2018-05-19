@@ -1,7 +1,7 @@
 #include "includes.h"
 u8 INPUT_DATA_NUM[10] ;
 u8 INPUT_DATA_AMOUNT = 0;
-
+	u16 receive;
 const u8 PAD_1[2]   = {0xfd, 0xff};
 const u8 PAD_2[2]   = {0xfb, 0xff};
 const u8 PAD_3[2]   = {0xf7, 0xff};
@@ -22,7 +22,7 @@ const u8 PAD_BACK[2] = {0xff, 0xbf};
 
 u16 scan_key(void)
 {
-	u16 receive;
+
 	PAD_IIC_Start();
 	PAD_IIC_Key_Send_Byte(0xAF);
 	PAD_IIC_Ack();//·¢ËÍnACK
