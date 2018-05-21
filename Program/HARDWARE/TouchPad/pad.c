@@ -1,7 +1,7 @@
 #include "includes.h"
 u8 INPUT_DATA_NUM[10] ;
 u8 INPUT_DATA_AMOUNT = 0;
-	u16 receive;
+u16 receive;
 const u8 PAD_1[2]   = {0xfd, 0xff};
 const u8 PAD_2[2]   = {0xfb, 0xff};
 const u8 PAD_3[2]   = {0xf7, 0xff};

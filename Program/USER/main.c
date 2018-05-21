@@ -14,25 +14,32 @@ int main(void)
 	delay_ms(500);
 	delay_ms(500);
 	/*--Z QP的74HC595*/
-HC595SendData(0);
+	HC595SendData(0);
+
 	while(1)
 	{
 		key_value = scan_key();
 		delay_ms(10);
-		if((key_value==scan_key())&&(key_value != 0))
-		{	delay_ms(10);
-		if((key_value==scan_key())&&(key_value != 0))
-		{	delay_ms(10);
-		if((key_value==scan_key())&&(key_value != 0))
+
+		if((key_value == scan_key()) && (key_value != 0))
 		{
+			delay_ms(10);
 
-		
-			HC595SendData(1 << (key_value - 1));
-			printf ("按键%02d按下   num=%04x \r\n", key_value,receive);
-			delay_ms(500);
-			HC595SendData(0 << (key_value - 1));
+			if((key_value == scan_key()) && (key_value != 0))
+			{
+				delay_ms(10);
 
-		}}
-	}
+				if((key_value == scan_key()) && (key_value != 0))
+				{
+
+
+					HC595SendData(1 << (key_value - 1));
+					printf ("按键%02d按下   num=%04x \r\n", key_value, receive);
+					delay_ms(500);
+					HC595SendData(0 << (key_value - 1));
+
+				}
+			}
+		}
 	}
 }

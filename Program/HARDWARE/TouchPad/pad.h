@@ -6,7 +6,7 @@
 #define KEY_AREA1       1
 #define KEY_AREA2       2
 
-	extern u16 receive;
+extern u16 receive;
 extern u8 INPUT_DATA_NUM[10] ;
 extern u8 INPUT_DATA_AMOUNT;
 extern const u8 PAD_1[2]  ;
