@@ -19,8 +19,15 @@ del *.d /s
 del *.tra /s
 del *.dep /s           
 del JLinkLog.txt /s
+
 del *.iex /s
 del *.htm /s
 del *.sct /s
 del *.map /s
+del *.pbi /s
+del *.xcl /s
+
+
+del *.pbd /s
+del *.browse /s
 exit
