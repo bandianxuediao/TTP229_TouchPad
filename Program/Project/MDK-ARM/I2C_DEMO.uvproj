@@ -553,11 +553,6 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\BSP\led.c</FilePath>
-            </File>
-            <File>
               <FileName>systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\BSP\systick.c</FilePath>
@@ -566,11 +561,6 @@
               <FileName>usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\BSP\usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\BSP\i2c.c</FilePath>
             </File>
             <File>
               <FileName>HC595.c</FileName>
@@ -586,16 +576,6 @@
               <FileName>PAD_IIC.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\BSP\TouchPad\PAD_IIC.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Doc</GroupName>
-          <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\doc\readme.txt</FilePath>
             </File>
           </Files>
         </Group>

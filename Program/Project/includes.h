@@ -9,10 +9,8 @@
 #include "stm32f10x_spi.h"
 #include "stm32f10x_adc.h"
 #include "stm32f10x.h"
-#include "led.h"
 #include "SYSTICK.h"
 #include "usart.h"
-#include "i2c.h"
 #include "sys.h"
 
 
