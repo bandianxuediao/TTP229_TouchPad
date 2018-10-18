@@ -12,4 +12,4 @@
 　　16个双色LED使用了2块74HC595级联来控制，双色Led的控制使用了一个超经典特简单的电路，如下图所示：
 ![一个引脚控制2个led](https://github.com/bandianxuediao/TTP229_TouchPad/blob/master/DOC/Photos/OnePinTwoLED.jpg)</br>
 　　图中LED1_G和LED1_R是链接在同一个引脚上面的，此引脚通过输出高低电平点亮不同颜色的LED。</br>
-　　其他更详细的问题描述以及问题解决过程，解决方案都已经在开发记录里面详述过，这里就不再赘言。</br>
+　　其他更详细的问题描述以及问题解决过程，解决方案都已经在开发记录里面详述过，这里就不再赘述。</br>
